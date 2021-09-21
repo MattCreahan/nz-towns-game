@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/map.css">
 
+    <script src="testLocations.js"></script>
+
     <!-- Mapbox API Setup -->
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
@@ -36,7 +38,7 @@
         <div id="map" class="flexColumnElement"></div>
         <div id="userInput" class="flexColumnElement">
             <label for="townInput">Enter a town:</label>
-            <input type="text" id="townInput" name="townInput">
+            <input type="text" id="townInput" name="townInput" oninput="checkInput()">
         </div>
     </div>
     <script src="js/map.js"></script>
