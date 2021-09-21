@@ -14796,7 +14796,6 @@ const towns = [{
 }
 ];
 
-
 let numCorrect = 0;
 
 function checkInput() {
@@ -14807,6 +14806,7 @@ function checkInput() {
         clearInputBox();
         addMarker(townObject);
         incrementScore();
+        addToList(townObject.name);
     }
 }
 
@@ -14832,4 +14832,11 @@ function generateDescription(townObject) {
 
 function incrementScore() {
     document.getElementById('score').innerHTML = `You have named ${++numCorrect} ${numCorrect > 1 ? 'towns/cities' : 'town/city'}!`;
+}
+
+function addToList(town) {
+    var node = document.createElement("LI");
+    var textnode = document.createTextNode(town);
+    node.appendChild(textnode);
+    document.getElementById("foundTowns").appendChild(node);
 }
