@@ -11785,7 +11785,7 @@ const towns = [{
 {
 	name: 'Clevedon',
 	lat: -37,
-	long: 175.05,
+	long: 75.05,
 	isFound: false
 },
 {
@@ -14815,7 +14815,7 @@ function clearInputBox() {
 }
 
 function addMarker(townObject) {
-    const lngLat = [townObject.long+100, townObject.lat];
+    const lngLat = [(townObject.long<100)?townObject.long+100:townObject.long, townObject.lat];
     const popup = new mapboxgl.Popup({
         closeButton: false
     });
