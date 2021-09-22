@@ -20,6 +20,7 @@ function checkInput() {
     if (!(townObject==null) && !townObject.isFound) {
         townObject.isFound = true;
         clearInputBox();
+        flashTick();
         addMarker(townObject);
         incrementScore();
         addToList(townObject.name);
@@ -28,6 +29,13 @@ function checkInput() {
 
 function clearInputBox() {
     document.getElementById('townInput').value = '';
+}
+
+function flashTick() {
+    document.getElementById('tick').style.visibility = 'visible';
+    setTimeout(() => {
+        document.getElementById('tick').style.visibility = 'hidden';
+    }, 1000);
 }
 
 function addMarker(townObject) {
