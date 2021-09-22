@@ -10,8 +10,12 @@ request.onload = function() {
 
 let numCorrect = 0;
 
+String.prototype.RemoveApostrophes = function() {
+    return this.replace(/'/g,'');
+}
+
 function checkInput() {
-    const input = document.getElementById('townInput').value;
+    let input = document.getElementById('townInput').value.RemoveApostrophes();
     const townObject = towns.find(town => town.name.toLowerCase() === input.toLowerCase());
     if (!(townObject==null) && !townObject.isFound) {
         townObject.isFound = true;
@@ -39,7 +43,7 @@ function addMarker(townObject) {
 }
 
 function generateDescription(townObject) {
-    return `<p class='popup'>${townObject.name}</p><p class='popup'>Population: ${townObject.population}</p>`;
+    return `<p class='popup'>${townObject.name}</p>`;
 }
 
 function incrementScore() {
